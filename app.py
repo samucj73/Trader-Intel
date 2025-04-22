@@ -34,13 +34,17 @@ with col2:
 
 st.divider()
 
+# Entrada para o URL do site
+url_roleta = st.text_input("Cole o endereço do site da roleta:", value="https://play.betfair.bet.br/launch/mobile?returnURL=https%3A%2F%2Flauncher.betfair.bet.br%2Flauncher%2F%3FgameId%3Dlive-lr-brazil-cev%26channel%3Dy...")
+
 # Janela do jogo
-st.markdown("### Roleta Betfair ao Vivo")
-components.iframe(
-    "https://play.betfair.bet.br/launch/mobile?returnURL=https%3A%2F%2Flauncher.betfair.bet.br%2Flauncher%2F%3FgameId%3Dlive-lr-brazil-cev%26channel%3Dy...",
-    height=600,
-    scrolling=True
-)
+if url_roleta:
+    st.markdown("### Roleta Betfair ao Vivo")
+    components.iframe(
+        url_roleta,
+        height=600,
+        scrolling=True
+    )
 
 st.markdown("### Captura Automática (OCR)")
 components.html("""
